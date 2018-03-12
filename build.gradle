@@ -1,0 +1,60 @@
+
+/**
+ ******************  Script Configuration ******************
+ */
+buildscript {
+  repositories {
+    mavenLocal()
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.0-SNAPSHOT'
+  }
+}
+
+repositories {
+  jcenter()
+}
+
+
+/**
+ ******************  Java Configuration ******************
+ */
+apply plugin: 'java'
+apply plugin: 'application'
+
+compileJava {
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+}
+
+/**
+ ******************  jpro Configuration ******************
+ */
+apply plugin: 'com.sandec.jpro'
+
+jproStartCommand {
+  //jvmArgs '-agentlib:jdwp=transport=dt_socket,server=y,address=5006,suspend=y'
+}
+
+/**
+ * App Main Class
+ */
+mainClassName = 'com.jpro.simplechat.SimpleChatApplication'
+
+/**
+ * jpro settings
+ */
+jpro {
+  //jpro server port
+  port = 8080
+
+  //wenn mehrere Stags über eine main() gestartet werden
+  //useMainMethod=true
+
+  //jpro version
+  jproVersion = "2018.1.0-SNAPSHOT"
+
+  openingPath = ""
+}
