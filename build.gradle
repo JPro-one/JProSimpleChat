@@ -9,7 +9,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.0-SNAPSHOT'
+    classpath 'com.sandec.jpro:jpro-plugin-gradle:2018.1.10'
   }
 }
 
@@ -49,12 +49,4 @@ mainClassName = 'com.jpro.simplechat.SimpleChatApplication'
 jpro {
   //jpro server port
   port = 8080
-
-  //wenn mehrere Stags über eine main() gestartet werden
-  //useMainMethod=true
-
-  //jpro version
-  jproVersion = "2018.1.0-SNAPSHOT"
-
-  openingPath = ""
 }
